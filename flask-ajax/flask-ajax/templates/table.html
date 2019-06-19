@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask-AJAX Integration Test</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+</head>
+<body>
+
+    <p id="demo"></p>
+
+    <table id="dtable">
+        <thead>
+            <th>HOST ID</th>
+            <th>Zip Code</th>
+            <th>Room Type</th>
+            <th>Price</th>
+            <th>Reviews count</th>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</body>
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</html>

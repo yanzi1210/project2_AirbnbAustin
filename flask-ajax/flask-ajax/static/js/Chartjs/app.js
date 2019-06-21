@@ -1,5 +1,5 @@
 // using JS Document API
-document.getElementById("demo").innerHTML = "Demo of Flask with AJAX!";
+document.getElementById("demo").innerHTML = "AirBnb Listings - AUSTIN";
 
 // using JQuery
 $(document).ready( function () {
@@ -15,6 +15,7 @@ $(document).ready( function () {
             $.each(data, function(i, item) {
                 var body = "<tr>";
                 body += "<td>" + item.host_id + "</td>";
+                body += "<td>" + item.host_name + "</td>";
                 body += "<td>" + item.neighbourhood+ "</td>";
                 body += "<td>" + item.room_type + "</td>";
                 body += "<td>" + item.price + "</td>";

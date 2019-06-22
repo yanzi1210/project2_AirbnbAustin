@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import json
 
 import sqlalchemy
 from sqlalchemy import create_engine, func
@@ -18,7 +19,7 @@ geodata = engine.execute("SELECT * FROM airbnbageojson_data")
 df = pd.read_sql("SELECT * FROM finalairbnba_data", con=engine)
 
 geo_df = pd.read_sql("SELECT * FROM airbnbageojson_data", con=engine)
-print(geo_df)
+#print(geo_df)
 #################################################
 # Flask Setup
 #################################################
@@ -31,6 +32,10 @@ app = Flask(__name__,template_folder='./templates')
 # approute that renders index page
 @app.route("/")
 def index():
+     return render_template("index.html")
+
+@app.route("/zipchart")
+def chartjs():
      return render_template("chartjs.html")
 
 # app route for getting zipcodes as a list for populating dropdown
@@ -78,6 +83,14 @@ def lmap(zipcode):
 @app.route("/leafletmap")
 def getmap():
      return render_template("leaflet.html")
+
+# app route for rendering leaflet map
+@app.route("/stackedchartjs")
+def getstackmapdata():
+     mean_df = round(df.groupby(["neighbourhood","room_type"])["price"].mean(),2)
+     unstack_data = mean_df.unstack(fill_value=0)    
+     stack_data = unstack_data.rename(columns={"Entire home/apt": "Entire_home_apt","Private room": "Private_room","Shared room":"Shared_room"}).to_json()
+     return stack_data
 
 # app route for rendering DataTable
 @app.route("/dtable")

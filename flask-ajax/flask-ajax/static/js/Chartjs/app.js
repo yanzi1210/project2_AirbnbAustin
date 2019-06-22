@@ -15,7 +15,6 @@ $(document).ready( function () {
             $.each(data, function(i, item) {
                 var body = "<tr>";
                 body += "<td>" + item.host_id + "</td>";
-                body += "<td>" + item.host_name + "</td>";
                 body += "<td>" + item.neighbourhood+ "</td>";
                 body += "<td>" + item.room_type + "</td>";
                 body += "<td>" + item.price + "</td>";

@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    font-family: Ubuntu, sans-serif;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color:whitesmoke;
+  }
+  
+  /* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
+  .wrapper {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 130px;
+    overflow: auto;
+  }
+  
+  /* The footer is positioned at the bottom of the page */
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100px;
+    background: #4e5d6c;
+  }
+  
+  /* The code styles the text at the bottom of the footer */
+  .footer > .bottom {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    background: #c5daee;
+  }
+  .hero {
+    position: relative;
+    height: 200px;
+    padding: 20px;
+    margin: 0;
+    background-image: url("./austin.jpg");
+    background-attachment: fixed;
+    background-position: bottom center;
+    background-size: cover;
+  }
+  
+  .hero h1 {
+    margin-top: 200px;
+    font-size: 0.1rem;
+    animation: title 1.2s forwards linear;
+  }
+  
+  .hero p {
+    font-size: 2rem;
+    opacity: 0;
+    animation: subtitle 1.2s forwards linear;
+    animation-delay: 1.2s;
+  }
+
+  #canvas {
+    float: left;
+    
+  }

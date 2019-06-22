@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/superhero/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/indexstyle.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="hero text-center">
+            <h1>AirBnb Austin</h1>
+        </div>
+        <div class="container" style="float:right; font-size: 30px">
+            <div class="row">
+                <div class="col-md-9">
+                    <div>
+                        <canvas id="myChart" width="800" height="400"; ></canvas>
+                    </div>
+                    <button id="Addzip" style="-webkit-text-fill-color: black; height:30px; width: 100px; font: 13px ubuntu;">Add Zipcode</button>
+                    <button id="Removezip" style="-webkit-text-fill-color: black; height:30px; width: 120px; font: 13px ubuntu;">Remove Zipcode</button>
+                </div>
+                <div class="col-md-3">
+                    <a href="/dtable" style="font: 20px ubuntu;">Go to Table data</a>
+                    <br>
+                    <a  href="/zipchart" style="font: 20px ubuntu;">Click to follow chartjs</a>
+                    <br>
+                    <a  href="/leafletmap" style="font: 20px ubuntu;">Click to follow Leaflet</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/Chartjs/chartjssummary.js') }}"></script>
+</body>
+
+</html>

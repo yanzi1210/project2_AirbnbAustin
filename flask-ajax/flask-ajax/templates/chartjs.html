@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flask Airbnb</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="{{ url_for('static', filename='js/cleave.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="well">
+                    <h2 style="font-size:small;">SELECT ZIPCODE:</h2>
+                    <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                </div>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Airbnb Listings Data</h3>
+                    </div>
+                    <div id="zip_listings" class="panel-body"></div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <h2 style="font-display:inherit;">Chart.js - AirBnB Austin Listings Plot</h2>
+                <div class="col-md-8">
+                    <div>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Average Price/Room type</h3>
+                    </div>
+                    <div id="zip_price" class="panel-body"></div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="col-md-8">
+                    <div id="Bar"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/Chartjs/logic.js') }}"></script>
+
+</html>

@@ -6,13 +6,13 @@ function markerSize(sizeWanted) {
 }
 
 function getGradedColor(parm1) {
-  if (parm1 > 200) {return "red"}
-  else if (parm1 > 100) {return "orange"}
-  else if (parm1 > 80) {return "yellow"}
-  else if (parm1 > 60) {return "green"}
-  else if (parm1 > 40) {return "blue"}
-  else if (parm1 > 20) {return "purple"}
-  else {return "white"}
+  return parm1 > 200 ? "red" :
+    parm1 > 100 ? "orange" :
+      parm1 > 80 ? "yellow" :
+        parm1 > 60 ?"green" :
+          parm1 > 40 ? "blue" :
+            parm1 > 20 ? "purple" :
+              "white";
 }
 
 // Creating map object
@@ -67,6 +67,7 @@ function addTileDark() {
 }
 
 var darkTile = addTileDark();
+
 
 // Function that will determine the color of a neighborhood based on the borough it belongs to
 function chooseColor(borough) {
@@ -148,7 +149,7 @@ var baseMaps = {
 }
 var overlayMaps =  {
                     
-                    "Listing Cost": listingGroupZipCode,                    
+                    //"Listing Cost": listingGroupZipCode,                    
                     // "Listing Type/Availability": listingGroupZipCode,
                     // "Room Type - Entire House/Apartment": listingGroupZipCode,
                     // "Room Type - Shared Room/Bath": listingGroupZipCode,
@@ -162,6 +163,32 @@ L.control.layers(baseMaps, overlayMaps, {
   collapsed: false
 })
 .addTo(map);
+
+var legend = L.control({ position: 'bottomright' });
+
+  legend.onAdd = function (myMap) {
+    var div = L.DomUtil.create('div', 'info legend'),
+    grades = [20,40,60,80,100,200],
+    labels = [];
+
+// loop through our density intervals and generate a label with a colored square for each interval
+for (var i = 0; i < grades.length; i++) {
+    div.innerHTML +=
+        '<i style="background:' + getGradedColor(grades[i] + 1) + '"></i> ' +
+        grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+      console.log(grades)
+      console.log("colors for legend...");
+  console.log(getGradedColor(grades[i] + 1));
+      
+}
+    return div;
+  };
+  
+
+
+
+
+  legend.addTo(map);
 
 
 function getdata(zipdata) {

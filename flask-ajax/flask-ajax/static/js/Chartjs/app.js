@@ -9,20 +9,17 @@ $(document).ready( function () {
         crossOrigin: true,
         url: "/ajax",
         success: function (data) {
-            console.log(data)
-
             // build the rows from each response element
             $.each(data, function(i, item) {
                 var body = "<tr>";
                 body += "<td>" + item.host_id + "</td>";
-                body += "<td>" + item.neighbourhood+ "</td>";
+                body += "<td>" + item.neighbourhood+ "</td>";//neighbourhood column gets zipcodes 
                 body += "<td>" + item.room_type + "</td>";
                 body += "<td>" + item.price + "</td>";
                 body += "<td>" + item.number_of_reviews + "</td>";
                 body += "</tr>";
                 $( "#dtable tbody" ).append(body);
             });
-
             /*DataTables instantiation.*/
             $( "#dtable" ).DataTable();
         },

@@ -16,21 +16,29 @@
         <div class="hero text-center">
             <h1>AirBnb Austin</h1>
         </div>
-        <div class="container" style="float:right; font-size: 30px">
+        <div class="container">
             <div class="row">
                 <div class="col-md-9">
+                    <h1 style="-webkit-text-fill-color: black;"> Visualization for Austin Airbnb Listings Price for Zipcodes</h1>
+                    <br>
+                    <p style="-webkit-text-fill-color: black;">As part of analyzing Airbnb Rental listings for Texas, we present visualization with an interactive plot along with insights into the Airbnb data. We focus on Austin City's data, for the very reason that we live in Texas and we wish to perform an in-depth analysis to find out affordable places for stay.</p>
                     <div>
-                        <canvas id="myChart" width="800" height="400"; ></canvas>
+                        <canvas id="myChart" width="800" height="400"; style="float:right; font-size: 30px;"></canvas>
                     </div>
                     <button id="Addzip" style="-webkit-text-fill-color: black; height:30px; width: 100px; font: 13px ubuntu;">Add Zipcode</button>
                     <button id="Removezip" style="-webkit-text-fill-color: black; height:30px; width: 120px; font: 13px ubuntu;">Remove Zipcode</button>
                 </div>
                 <div class="col-md-3">
-                    <a href="/dtable" style="font: 20px ubuntu;">Go to Table data</a>
-                    <br>
-                    <a  href="/zipchart" style="font: 20px ubuntu;">Click to follow chartjs</a>
-                    <br>
-                    <a  href="/leafletmap" style="font: 20px ubuntu;">Click to follow Leaflet</a>
+                    <ul>
+                        <li>
+                            <a href="/dtable" style="font: 20px ubuntu; -webkit-text-fill-color:navy;">Go to Table data</a>
+                
+                            <br>
+                            <a href="/zipchart" style="font: 20px ubuntu; -webkit-text-fill-color:navy;">Click to follow chartjs</a>
+                            <br>
+                            <a href="/leafletmap" style="font: 20px ubuntu; -webkit-text-fill-color:navy;">Click to follow Leaflet</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>

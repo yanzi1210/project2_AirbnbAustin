@@ -98,7 +98,17 @@ config =  {
     responsive: false,
     // Can't just just `stacked: true` like the docs say
     scales: {
+      xAxes: [{
+      scaleLabel: {
+        display: true,
+        labelString: 'Austin Zip Codes'
+      },
+      }],
       yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: 'Average Price'
+        },
         stacked: true,
       }]
     },
